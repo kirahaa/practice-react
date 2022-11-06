@@ -1,14 +1,11 @@
 import {useState, useEffect} from "react"
 
 function Hello() {
-  const byeFn = () => {
-    console.log('bye :<')
-  }
-  const HiFn = () => {
-    console.log("created!")
-    return byeFn
-  }
-  useEffect(HiFn, [])
+  useEffect(() => {
+    console.log('hi :)')
+    return () => console.log('bye :(')
+  }, [])
+
   return <h1>Hello</h1>
 }
 
