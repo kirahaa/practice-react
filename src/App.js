@@ -1,5 +1,5 @@
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route
 } from "react-router-dom";
@@ -8,12 +8,14 @@ import Detail from "./routes/Detail";
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <Routes>
-        <Route path={`${process.env.PUBLIC_URL}/`} element={<Home/>}/>
-        <Route path={`${process.env.PUBLIC_URL}/movie/:id`} element={<Detail/>}/>
+        <Route path='/movie/:id' element={<Detail />}>
+        </Route>
+        <Route path='/' element={<Home />}>
+        </Route>
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 
